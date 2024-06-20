@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 body {
     background: rgb(75,0,102);
-    background: radial-gradient(circle, rgba(60,0,80,1) 0%, rgba(10,0,20,1) 100%);
+    background: radial-gradient(circle, rgb(22, 0, 29) 0%, rgb(0, 0, 0) 100%);
     font-family: 'Sen';
     color: #F4C032;
     
@@ -34,7 +34,7 @@ body {
   /* Sidebar/left column */
   .about {
     flex: 20%; /* Set the width of the sidebar */
-    background-color: #33333340; /* Grey background color */
+    background-color: #33333370; /* Grey background color */
     padding: 20px; /* Some padding */
     font-family:"Sen";
     color: #F4c032
@@ -44,12 +44,11 @@ body {
   /* Main column */
   .projects {
     flex:70%; /* Set the width of the main content */
-    background-color: #33333340; /* White background color */
+    background-color: #33333370; /* White background color */
     padding: 20px; /* Some padding */
     font-family:"Sen";
     color: #F4c032;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-block;
   }
 
   .footer {
@@ -60,6 +59,32 @@ body {
     font-family:"Sen";
     color: #F4c032;
   }
-  .impact, .hackclub {
-flex:50%
+  .impact, .hackclub, .ftc{
+    text-align: center;
+    display:inline-block;
+  }
+  div.impact a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    z-index: 10; /* Places the link above everything else in the div */
+    background-color: #FFF; /* Fix to make div clickable in IE */
+    opacity: 0; /* Fix to make div clickable in IE */
+    filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+  }
+
+  div.hackclub a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    z-index: 10; /* Places the link above everything else in the div */
+    background-color: #FFF; /* Fix to make div clickable in IE */
+    opacity: 0; /* Fix to make div clickable in IE */
+    filter: alpha(opacity=1); /* Fix to make div clickable in IE */
   }
