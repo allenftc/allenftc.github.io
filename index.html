@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-icon" href="evlogo.png">
   <style>
   head {
-      font-family: Sen';font-size: 22px;
+      font-family: 'Sen';font-size: 22px;
   }
   a:link {
   color: #F4c032;
@@ -45,19 +45,38 @@ a:active {
 
 <div class="row">
   <div class="side">
-    <h4 style="text-align:center">About the project</h4>
+    <h2 style="text-align:center">About the project</h2>
 <p>I created this impact strength tester after realizing that there were no good ways to compare filaments across manufacturers, as they used different testing methods.
    For example, PolyMaker PolyMax PC on PolyMaker's website had around half the impact strength of the same filament on Prusa's website.
     However, I didn't have my own Charpy impact strength tester, so I decided to make my own that would at least allow me to compare filaments. 
   It uses tubes from FTC fields and a 3D printed frame, to allow a weighted tube to drop down onto the notched test piece. </p>
   <img src="tester.jpg" width="300">
   <img src="broken.jpg" width="300">
+  <h3 style="text-align:center">What counts as broken?</h3>
+    <p>For the purposes of this experiment, I am defining broken as either completely broken in half, or bent so badly the test piece falls out of the holder. 
+      While there is slight bending and stress marks way before it breaks in half, this allows the test to measure how the material performs under continued stress, even if it is slightly damaged.</p>
+    <figure class="not_broken">
+    <img src="close1.jpg" width="250">
+    <figcaption>Not broken</figcaption>
+    </figure>
+    <figure class="broken">
+    <img src="close2.jpg" width="250">
+    <figcaption>Broken</figcaption>
+  </figure>
+  <h3 style="text-align:center">The testing process</h3>
+  <p>To test each filament, I drop the testing rod higher every time in 1 inch increments, until the testing piece breaks or the height goes past 21 inches (the maximum height).
+    This allows the test to also measure the resistance to repeated impacts, not just a single hit.</p>
     
   </div>
   <div class="main"><canvas id="myChart" style="width:100%;max-width:2000px"></canvas></div>
 </div>
+
 <div class = "footer">
   <a href="https://docs.google.com/spreadsheets/d/1j2j8dWXnGyl-gMgZfTwgYxUsvc1im5KhjUn3wwF9LJk/edit?usp=sharing">View the spreadsheet here</a>
+  <p></p>
+  <a href="https://cad.onshape.com/documents/ab4f2a8686103a882a690ebf/w/862279b931900e3f150bae40/e/c2a38ab097e1a34294ecf836">View the CAD here</a>
+  <p>Contact Me on Discord: @yengkeenoodles</p>
+
   <h1>NOTE: Only PolySonic PLA Pro and Overture PLA Pro have been tested. The rest are placeholder values and will be updated once the testing is finished.</h1>
 </div>
 
