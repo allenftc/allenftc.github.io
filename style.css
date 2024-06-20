@@ -1,4 +1,4 @@
-@import url('//fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 body {
     background: rgb(75,0,102);
     background: radial-gradient(circle, rgba(75,0,102,1) 0%, rgba(26,0,82,1) 100%);
@@ -33,7 +33,7 @@ body {
     flex: 20%; /* Set the width of the sidebar */
     background-color: #33333340; /* Grey background color */
     padding: 40px; /* Some padding */
-    font-family:'Sen';
+    font-family:"Sen";
     color: #F4c032
     
   }
@@ -43,7 +43,7 @@ body {
     flex: 80%; /* Set the width of the main content */
     background-color: #33333340; /* White background color */
     padding: 20px; /* Some padding */
-    font-family:'Sen';
+    font-family:"Sen";
     color: #F4c032
   }
   .footer {
@@ -51,6 +51,9 @@ body {
     text-align: center; /* Center text*/
     background-color: #33333340; /* White background color */
     padding: 20px; /* Some padding */
-    font-family:'Sen';
+    font-family:"Sen";
     color: #F4c032;
+  }
+  .broken, .not_broken {
+    display: inline-block;
   }
