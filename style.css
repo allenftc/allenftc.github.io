@@ -1,0 +1,55 @@
+body {
+    background: rgb(75,0,102);
+    background: radial-gradient(circle, rgba(75,0,102,1) 0%, rgba(26,0,82,1) 100%);
+    
+}
+
+.header {
+    padding: 80px; /* some padding */
+    text-align: center; /* center the text */
+    background: #33333340; /* green background */
+    color: #F4c032; /* white text color */
+  }
+  
+  /* Increase the font size of the <h1> element */
+  .header h1 {
+    font-size: 40px;
+  }
+  /* Ensure proper sizing */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Column container */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    flex: 20%; /* Set the width of the sidebar */
+    background-color: #33333340; /* Grey background color */
+    padding: 40px; /* Some padding */
+    font-family:"Avenir";
+    color: #F4c032
+    
+  }
+  
+  /* Main column */
+  .main {
+    flex: 80%; /* Set the width of the main content */
+    background-color: #33333340; /* White background color */
+    padding: 20px; /* Some padding */
+    font-family:"Avenir";
+    color: #F4c032
+  }
+  .footer {
+    flex:50%;
+    text-align: center; /* Center text*/
+    background-color: #33333340; /* White background color */
+    padding: 20px; /* Some padding */
+    font-family:"Avenir";
+    color: #F4c032;
+  }
