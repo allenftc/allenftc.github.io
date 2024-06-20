@@ -32,7 +32,7 @@ body {
     flex: 20%; /* Set the width of the sidebar */
     background-color: #33333340; /* Grey background color */
     padding: 40px; /* Some padding */
-    font-family:"Avenir";
+    font-family:"Sen";
     color: #F4c032
     
   }
@@ -42,7 +42,7 @@ body {
     flex: 80%; /* Set the width of the main content */
     background-color: #33333340; /* White background color */
     padding: 20px; /* Some padding */
-    font-family:"Avenir";
+    font-family:"Sen";
     color: #F4c032
   }
   .footer {
@@ -50,6 +50,6 @@ body {
     text-align: center; /* Center text*/
     background-color: #33333340; /* White background color */
     padding: 20px; /* Some padding */
-    font-family:"Avenir";
+    font-family:"Sen";
     color: #F4c032;
   }
