@@ -82,9 +82,9 @@ a:active {
 
 
 <script>
-  const labels = ['PolySonic PLA Pro', 'PolyLite PLA Pro',
-                  'PolyMax PLA', 'PA612-CF',
-                  'Overture PLA Pro', 'Overture CoPA', 'Bambu PLA Basic'];
+  const labels = ['PolySonic PLA Pro (19.3)', 'PolyLite PLA Pro',
+                  'PolyMax PLA', 'PA612-CF (5.7)',
+                  'Overture PLA Pro (12.7)', 'Overture CoPA', 'Bambu PLA Basic'];
   const data = {
       labels: labels,
       datasets: [{
@@ -93,6 +93,7 @@ a:active {
           backgroundColor: '#F4c0320F',
           borderColor: '#F4c032',
           borderWidth: 3,
+          fontColor: '#F4C032'
           
       }]
   };
@@ -100,8 +101,16 @@ a:active {
       type: 'bar',
       data: data,
       options: {
+        interaction: {
+      intersect: false,
+      mode: 'index',
+    },
           scales: {
-
+            x: [{
+              ticks: {
+                fontColor: '#F4C032'
+              }
+            }],
               y: {
                   title: {
                       display: true,
@@ -126,7 +135,7 @@ a:active {
   };
   let ctx = document.getElementById('myChart')
       .getContext('2d');
-  let myChart = new Chart(ctx, config);
+  let myChart = new Chart("myChart", config);
 </script>
 
 </body>
