@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="evlogo.png">
+  <style>
+  head {
+      font-family: 'Sen';font-size: 22px;
+  }
+  a:link {
+  color: #F4c032;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #F4c032;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dfa507;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+  </style>
+  <link rel="stylesheet" href="style.css">
+<title >Filament Impact Strength Comparison</title>
+
+</head>
+<body>
+<div class="header">
+  <h1 style="font-family:sen">Filament Impact Strength Comparison</h1>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2 style="text-align:center">About the project</h2>
+<p>I created this impact strength tester after realizing that there were no good ways to compare filaments across manufacturers, as they used different testing methods.
+   For example, PolyMaker PolyMax PC on PolyMaker's website had around half the impact strength of the same filament on Prusa's website.
+    However, I didn't have my own Charpy impact strength tester, so I decided to make my own that would at least allow me to compare filaments, and I hope to help the FTC and 3D printing community a little with this. 
+  It uses tubes from FTC fields and a 3D printed frame, to allow a weighted tube to drop down onto the notched test piece. The total weight of the tube is 310 grams. </p>
+  <img src="tester.jpg" width="300">
+  <img src="broken.jpg" width="300">
+  <h3 style="text-align:center">What counts as broken?</h3>
+    <p>For the purposes of this experiment, I am defining broken as either completely broken in half, or bent so badly the test piece falls out of the holder. 
+      While there is slight bending and stress marks way before it breaks in half, this allows the test to measure how the material performs under continued stress, even if it is slightly damaged.</p>
+    <figure class="not_broken">
+    <img src="close1.jpg" width="250">
+    <figcaption>Not broken</figcaption>
+    </figure>
+    <figure class="broken">
+    <img src="close2.jpg" width="250">
+    <figcaption>Broken</figcaption>
+  </figure>
+  <h3 style="text-align:center">The testing process</h3>
+  <p>To test each filament, I drop the testing rod higher every time in 1 inch increments, until the testing piece breaks or the height goes past 21 inches (the maximum height).
+    This allows the test to also measure the resistance to repeated impacts, not just a single hit. I take the average of 3 trials.</p>
+    <h3 style="text-align:center">Results</h3>
+    <p>Intrestingly, PolySonic is the most impact resistant while PolyMax is supposed to be more impact resistant. 
+      The failure mode every time for PolyMax was bending out of the holder, not breaking in half. 
+      This shows that too low of a stiffness can have drawbacks, and it had stress marks all over the test piece.
+    While this test does give some information, the notch to plastic thickness ratio is way bigger than on a real Charpy impact test. 
+  This causes it to test how a material responds to repeated bending force rather than pure impact strength.</p>
+    <figure>
+    <video width="320" height="240" controls><source src="impact test.mp4" type="video/mp4"></video>
+    <figcaption>A slow motion video of PolyLite PLA at 10 inches high</figcaption>
+    </figure>
+  </div>
+  <div class="main"><canvas id="myChart" style="width:100%;max-width:2000px"></canvas></div>
+</div>
+
+<div class = "footer">
+  <a href="https://docs.google.com/spreadsheets/d/1j2j8dWXnGyl-gMgZfTwgYxUsvc1im5KhjUn3wwF9LJk/edit?usp=sharing">View the spreadsheet here</a>
+  <p></p>
+  <a href="https://cad.onshape.com/documents/ab4f2a8686103a882a690ebf/w/862279b931900e3f150bae40/e/c2a38ab097e1a34294ecf836">View the CAD here</a>
+  <p>Contact Me on Discord: @yengkeenoodles</p>
+
+  <h3>Note: This test was mainly just out of curiosity and for fun, and tests these materials in very specific circumstances. The results may not perfectly reflect the qualities of each material.</h3>
+</div>
+
+
+<script>
+  const labels = ['PolySonic PLA Pro (19.3)', 'PolyLite PLA Pro (11)',
+                  'PolyMax PLA (16.0)', 'PA612-CF (5.7)',
+                  'Overture PLA Pro (12.7)','Bambu PLA Basic (9)'];
+  const data = {
+      labels: labels,
+      datasets: [{
+          label: 'Height Dropped to Break (Inches)',
+          data: [19.3, 11, 16, 5.7, 12.7,9],
+          backgroundColor: '#F4c0320F',
+          borderColor: '#F4c032',
+          borderWidth: 3,
+          fontColor: '#F4C032'
+          
+      }]
+  };
+  const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        interaction: {
+      intersect: false,
+      mode: 'index',
+    },
+          scales: {
+            x: [{
+              ticks: {
+                fontColor: '#F4C032'
+              }
+            }],
+              y: {
+                  title: {
+                      display: true,
+                      align: 'center',
+                      text: 'GeeksforGeeks Visits',
+                      color: 'black',
+                      font: {
+                          family: 'Arial',
+                          size: 16,
+                          weight: 'bold',
+                      },
+                      padding: {
+                          top: 10,
+                          bottom: 5,
+                          left: 0,
+                          right: 0,
+                      },
+                  },
+              }
+          },
+      },
+  };
+  let ctx = document.getElementById('myChart')
+      .getContext('2d');
+  let myChart = new Chart("myChart", config);
+</script>
+
+</body>
+</html>
