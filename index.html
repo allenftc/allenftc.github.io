@@ -66,7 +66,12 @@ a:active {
   <h3 style="text-align:center">The testing process</h3>
   <p>To test each filament, I drop the testing rod higher every time in 1 inch increments, until the testing piece breaks or the height goes past 21 inches (the maximum height).
     This allows the test to also measure the resistance to repeated impacts, not just a single hit. I take the average of 3 trials.</p>
-    
+    <h3 style="text-align:center">Results</h3>
+    <p>Intrestingly, PolySonic is the most impact resistant while PolyMax is supposed to be more impact resistant. The failure mode every time for PolyMax was bending out of the holder, not breaking in half. This shows that too low of a stiffness can have drawbacks, and it had stress marks all over the test piece.</p>
+    <figure>
+    <video width="320" height="240" controls><source src="impact test.mp4" type="video/mp4"></video>
+    <figcaption>A slow motion video of PolyLite PLA at 10 inches high</figcaption>
+    </figure>
   </div>
   <div class="main"><canvas id="myChart" style="width:100%;max-width:2000px"></canvas></div>
 </div>
@@ -77,19 +82,19 @@ a:active {
   <a href="https://cad.onshape.com/documents/ab4f2a8686103a882a690ebf/w/862279b931900e3f150bae40/e/c2a38ab097e1a34294ecf836">View the CAD here</a>
   <p>Contact Me on Discord: @yengkeenoodles</p>
 
-  <h1>NOTE: Only PolySonic PLA Pro, PolyMax PLA, PA612-CF and Overture PLA Pro have been tested. The rest are placeholder values and will be updated once the testing is finished.</h1>
+  <h3>Note: This test was mainly just out of curiosity and for fun, and tests these materials in very specific circumstances. The results may not perfectly reflect the qualities of each material.</h3>
 </div>
 
 
 <script>
-  const labels = ['PolySonic PLA Pro (19.3)', 'PolyLite PLA Pro',
+  const labels = ['PolySonic PLA Pro (19.3)', 'PolyLite PLA Pro (11)',
                   'PolyMax PLA (16.0)', 'PA612-CF (5.7)',
-                  'Overture PLA Pro (12.7)', 'Overture CoPA', 'Bambu PLA Basic'];
+                  'Overture PLA Pro (12.7)'];
   const data = {
       labels: labels,
       datasets: [{
           label: 'Height Dropped to Break (Inches)',
-          data: [19.3, 15, 26, 5.7, 12.7, 19, 7],
+          data: [19.3, 11, 5.7, 16, 12.7],
           backgroundColor: '#F4c0320F',
           borderColor: '#F4c032',
           borderWidth: 3,
